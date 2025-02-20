@@ -28,6 +28,14 @@ let timer = setInterval(function () {
     }
 }, 100);
 
+const userNum = document.querySelectorAll('.form-control');
+const userNumbs = [];
+for (let i = 0; i < userNumbs.length; i++) {
+    userNum[i].value = userNumbs[i];
+    console.log(userNum[i].value);
+    
+}
+
 
 
 
