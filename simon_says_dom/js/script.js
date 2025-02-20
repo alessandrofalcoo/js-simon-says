@@ -26,27 +26,33 @@ let timer = setInterval(function () {
         d_none.classList.remove('d-none');
 
     }
-}, 100);
-
-const userNum = document.querySelectorAll('.form-control');
-const userNumbs = [];
-for (let i = 0; i < userNumbs.length; i++) {
-    userNum[i].value = userNumbs[i];
-    console.log(userNum[i].value);
-    
-}
+}, 1000);
 
 
-for (let i = 0; i < ranNumbs.length; i++) {
-    if (userNum[i].value == ranNumbs[i]) {
-        console.log('bravo hai indovinato');
-        
-    } else {
-        console.log('mi spiace ritenta con un altro numero');
-        
+const button = document.querySelector('button');
+const result = document.getElementById('message');
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    let correctNumbs = [];
+    const userNum = document.querySelectorAll('.form-control');
+    const userNumbs = [];
+    for (let i = 0; i < userNum.length; i++) {
+        userNumbs.push(Number(userNum[i].value));
     }
-    
-}
+    for (let i = 0; i < ranNumbs.length; i++) {
+        if (userNumbs[i] === ranNumbs[i]) {
+            correctNumbs.push(userNumbs[i])
+        }
+    }
+    if (correctNumbs.length > 0) {
+        result.textContent = 'bravo hai indovinato ' + correctNumbs.join(', ');
+    } else {
+        result.textContent = 'Mi spiace non ne hai indovinato neanche uno';
+
+    }
+});
+
+
 
 
 
