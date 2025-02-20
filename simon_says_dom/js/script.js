@@ -37,6 +37,18 @@ for (let i = 0; i < userNumbs.length; i++) {
 }
 
 
+for (let i = 0; i < ranNumbs.length; i++) {
+    if (userNum[i].value == ranNumbs[i]) {
+        console.log('bravo hai indovinato');
+        
+    } else {
+        console.log('mi spiace ritenta con un altro numero');
+        
+    }
+    
+}
+
+
 
 
 
